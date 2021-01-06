@@ -28,6 +28,7 @@ router.get('/book-info-getter/isbn', (request: express.Request, response: expres
 受け取る値
 {
     title: string (本のタイトルの情報)
+    page: number (楽天ブックスAPIで表示するページ番号(最大100))
 }
 返却する値
 {
@@ -37,6 +38,40 @@ router.get('/book-info-getter/isbn', (request: express.Request, response: expres
 router.get('/book-info-getter/title', (request: express.Request, response: express.Response) => {
     const bookInformationGetter = new BookInformationGetter(request, response);
     bookInformationGetter.getBookInformationByTitle();
+});
+
+/*
+参考：著者名による検索
+受け取る値
+{
+    author: string (本のタイトルの情報)
+    page: number (楽天ブックスAPIで表示するページ番号(最大100))
+}
+返却する値
+{
+    楽天ブックスAPIに準拠
+}
+*/
+router.get('/book-info-getter/author', (request: express.Request, response: express.Response) => {
+    const bookInformationGetter = new BookInformationGetter(request, response);
+    bookInformationGetter.getBookInformationByAuthor();
+});
+
+/*
+参考：出版社名による検索
+受け取る値
+{
+    publisher: string (本のタイトルの情報)
+    page: number (楽天ブックスAPIで表示するページ番号(最大100))
+}
+返却する値
+{
+    楽天ブックスAPIに準拠
+}
+*/
+router.get('/book-info-getter/publisher', (request: express.Request, response: express.Response) => {
+    const bookInformationGetter = new BookInformationGetter(request, response);
+    bookInformationGetter.getBookInformationByPublisher();
 });
 
 /*
