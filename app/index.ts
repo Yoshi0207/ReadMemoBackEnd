@@ -1,3 +1,4 @@
+// envファイルを読み込む
 require('dotenv').config();
 
 import express from 'express';
@@ -30,8 +31,8 @@ app.use((reqest, response) => {
     });
 });
 
-const hostname = '127.0.0.1';
-const port = 3000;
+const hostname = process.env.READMEMO_HOST_NAME ?? "127.0.0.1";
+const port = process.env.READMEMO_PORT ?? "3000";
 
-// 3000番ポートでAPIサーバ起動
-app.listen(port, hostname, () => { console.log('listen on port 3000.') });
+// APIサーバ起動
+app.listen(parseInt(port), hostname, () => { console.log(`listen on port ${port}.`) });

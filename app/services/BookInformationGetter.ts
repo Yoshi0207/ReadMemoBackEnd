@@ -1,7 +1,6 @@
 import express from 'express';
 import axios from 'axios';
 import { rejects } from 'assert';
-import { access } from 'fs';
 
 type ResponseOfRakutenApi = Object;
 
@@ -16,7 +15,7 @@ export default class BookInformationGetter {
 
         // エンドポイントの指定
         this.endPoint += process.env.READMEMO_RAKUTEN_BOOKS_ENDPOINT;
-        
+
         // リクエストに必要なクエリを追加(パスワードなど)
         this.endPoint += `?format=json&applicationId=${process.env.READMEMO_RAKUTEN_BOOKS_APPLICATION_ID}`;
         if (process.env.READMEMO_RAKUTEN_BOOKS_AFFILIATE_ID!=undefined) {
@@ -113,7 +112,7 @@ export default class BookInformationGetter {
         this.accessToApiAndSendResponse();
     }
 
-    // 作成したURLを用いて楽天ブックスAPIにアクセスし、取得した値をクライアント側に返す
+    // 作成したURLを用いて楽天ブックスAPIにアクセスし、値を取得したのちにそれをクライアント側に返す
     private async accessToApiAndSendResponse(): Promise<void> {
         try {
             const info = await BookInformationGetter.accessToRakutenApi(this.endPoint);
