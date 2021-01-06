@@ -31,8 +31,13 @@ app.use((reqest, response) => {
   });
 });
 
-const hostname = process.env.READMEMO_HOST_NAME;
-const port = process.env.READMEMO_PORT ?? "3000";
+// コンテナを使用しない場合の設定
+// const hostname = process.env.READMEMO_HOST_NAME;
+// const port = process.env.READMEMO_PORT ?? "8080";
+
+// コンテナ使用を使用する場合の設定
+const hostname = '0.0.0.0';
+const port = '8080';
 
 // APIサーバ起動
 if (hostname == undefined) {
