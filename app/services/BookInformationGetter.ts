@@ -18,7 +18,7 @@ export default class BookInformationGetter {
 
         // リクエストに必要なクエリを追加(パスワードなど)
         this.endPoint += `?format=json&applicationId=${process.env.READMEMO_RAKUTEN_BOOKS_APPLICATION_ID}`;
-        if (process.env.READMEMO_RAKUTEN_BOOKS_AFFILIATE_ID!=undefined) {
+        if (process.env.READMEMO_RAKUTEN_BOOKS_AFFILIATE_ID != undefined) {
             this.endPoint += `&affiliateId=${process.env.READMEMO_RAKUTEN_BOOKS_AFFILIATE_ID}`;
         }
     }
