@@ -21,15 +21,17 @@ app.use(express.urlencoded({ extended: true }));
 app.use(router);
 
 // マッチしなかった場合の処理
-app.use((_reqest, response) => {
-    response.status(404);
-    response.render('error', {
-      param: {
+app.use((reqest, response) => {
+    response.send({
+      error: {
         status: 404,
         message: 'not found'
       },
     });
 });
 
+const hostname = '127.0.0.1';
+const port = 3000;
+
 // 3000番ポートでAPIサーバ起動
-app.listen(3000, () => { console.log('listen on port 3000.') });
+app.listen(port, hostname, () => { console.log('listen on port 3000.') });
