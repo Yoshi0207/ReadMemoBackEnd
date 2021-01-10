@@ -19,8 +19,8 @@ const router: express.Router = express.Router()
 }
 */
 router.get('/book-info-getter/isbn', (request: express.Request, response: express.Response) => {
-    const bookInformationGetter = new BookInformationGetter(request, response);
-    bookInformationGetter.getBookInformationByIsbn();
+  const bookInformationGetter = new BookInformationGetter(request, response);
+  bookInformationGetter.getBookInformationByIsbn();
 });
 
 /*
@@ -36,8 +36,8 @@ router.get('/book-info-getter/isbn', (request: express.Request, response: expres
 }
 */
 router.get('/book-info-getter/title', (request: express.Request, response: express.Response) => {
-    const bookInformationGetter = new BookInformationGetter(request, response);
-    bookInformationGetter.getBookInformationByTitle();
+  const bookInformationGetter = new BookInformationGetter(request, response);
+  bookInformationGetter.getBookInformationByTitle();
 });
 
 /*
@@ -53,8 +53,8 @@ router.get('/book-info-getter/title', (request: express.Request, response: expre
 }
 */
 router.get('/book-info-getter/author', (request: express.Request, response: express.Response) => {
-    const bookInformationGetter = new BookInformationGetter(request, response);
-    bookInformationGetter.getBookInformationByAuthor();
+  const bookInformationGetter = new BookInformationGetter(request, response);
+  bookInformationGetter.getBookInformationByAuthor();
 });
 
 /*
@@ -70,8 +70,8 @@ router.get('/book-info-getter/author', (request: express.Request, response: expr
 }
 */
 router.get('/book-info-getter/publisher', (request: express.Request, response: express.Response) => {
-    const bookInformationGetter = new BookInformationGetter(request, response);
-    bookInformationGetter.getBookInformationByPublisher();
+  const bookInformationGetter = new BookInformationGetter(request, response);
+  bookInformationGetter.getBookInformationByPublisher();
 });
 
 /*
@@ -87,12 +87,12 @@ router.get('/book-info-getter/publisher', (request: express.Request, response: e
 }
 */
 router.get('/book-info-getter/genre', (request: express.Request, response: express.Response) => {
-    const bookInformationGetter = new BookInformationGetter(request, response);
-    bookInformationGetter.getBookInformationByGenre();
+  const bookInformationGetter = new BookInformationGetter(request, response);
+  bookInformationGetter.getBookInformationByGenre();
 });
 
 router.post('/api/postTest', (req: express.Request, res: express.Response) => {
-    res.send(req.body);
+  res.send(req.body);
 })
 
 export default router;
