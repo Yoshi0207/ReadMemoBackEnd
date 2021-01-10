@@ -2,6 +2,8 @@ import express from 'express';
 import axios from 'axios';
 import { rejects } from 'assert';
 
+const READMEMO_RAKUTEN_BOOKS_ENDPOINT="https://app.rakuten.co.jp/services/api/BooksBook/Search/20170404"
+
 export default class BookInformationGetter {
   private request: express.Request;
   private response: express.Response;
@@ -12,7 +14,7 @@ export default class BookInformationGetter {
     this.response = response;
 
     // エンドポイントの指定
-    this.endPoint += process.env.READMEMO_RAKUTEN_BOOKS_ENDPOINT;
+    this.endPoint += READMEMO_RAKUTEN_BOOKS_ENDPOINT;
 
     // リクエストに必要なクエリを追加(パスワードなど)
     this.endPoint += `?format=json&applicationId=${process.env.READMEMO_RAKUTEN_BOOKS_APPLICATION_ID}`;
