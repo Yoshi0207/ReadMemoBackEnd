@@ -1,5 +1,5 @@
 # ReadMemoBackEndApplication
-[ReadMemoAndroidApplication](https://github.com/Yoshi0207/ReadMemoAndroidApplication)からのリクエストを受け取るサーバサイドアプリケーションです。取得したリクエストに応じた書籍情報を返却します。
+[ReadMemo](https://github.com/Yoshi0207/ReadMemoAndroidApplication)からのリクエストを受け取るサーバサイドアプリケーションです。取得したリクエストに応じた書籍情報を返却します。
 
 ## 環境設定
 ### 1. 環境変数を指定する
